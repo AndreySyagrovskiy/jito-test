@@ -59,6 +59,7 @@ function requestProductsList(page: number) {
 }
 
 function addProductRequest(product: Product) {
+  // Mock API call
   return new Promise((resolve) => {
     setTimeout(() => {
       generatedProducts = [product, ...generatedProducts];
