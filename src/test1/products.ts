@@ -58,8 +58,6 @@ function requestProductsList(page: number) {
 
 }
 
-
-
 function addProductRequest(product: Product) {
   return new Promise((resolve) => {
     setTimeout(() => {
