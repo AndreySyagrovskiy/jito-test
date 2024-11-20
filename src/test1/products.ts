@@ -22,7 +22,7 @@ export function useProductsList() {
   const products = computed(() => [...newProducts.value, ...fetchedProducts.value]);
 
 
-  async function fetchItems({ pageParam = 1 }): Promise<{ products: Product[], nextCursor: number}>  {
+  async function fetchItems({ pageParam = 1 }): Promise<{ products: Product[], nextCursor: number }> {
     return requestProductsList(pageParam);
   }
 
@@ -48,13 +48,13 @@ export function useProductsList() {
     isLoading,
     addNewProduct,
     refetchProducts
-};
+  };
 }
 
 function requestProductsList(page: number) {
   generateProductsMock();
   // Mock API call
-  return Promise.resolve({ products: generatedProducts.slice(20 * (page - 1), (20 * page) - 1 ), nextCursor: page + 1 });
+  return Promise.resolve({ products: generatedProducts.slice(20 * (page - 1), (20 * page) - 1), nextCursor: page + 1 });
 
 }
 
