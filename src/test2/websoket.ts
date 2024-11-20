@@ -13,7 +13,6 @@ export function useWebSocket() {
   let buttonsNotReactive: ButtonData[] = [];
   const buttons = ref<ButtonData[]>([]);
 
-
   ws.onmessage = (data) => {
     buttonsNotReactive = data.data;
     throttledUpdateButtons();
